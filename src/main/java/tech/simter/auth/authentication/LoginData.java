@@ -45,6 +45,16 @@ public class LoginData {
     return encryptType;
   }
 
+  private LoginData() {
+  }
+
+  public LoginData(LoginType loginType, String account, String password, EncryptType encryptType) {
+    this.loginType = loginType;
+    this.account = account;
+    this.password = password;
+    this.encryptType = encryptType;
+  }
+
   /**
    * The method for auto convert body text to POJO
    *

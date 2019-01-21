@@ -1,6 +1,7 @@
 package tech.simter.auth.authentication;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -15,7 +16,7 @@ public class AuthenticatedData {
 
   public AuthenticatedData(String token) {
     this.token = token;
-    this.ts = LocalDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+    this.ts = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
   }
 
   /**
