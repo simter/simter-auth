@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>tech.simter.auth</groupId>
+    <artifactId>simter-auth-parent</artifactId>
+    <version>${revision}</version>
+    <relativePath>../simter-auth-parent</relativePath>
+  </parent>
+  <artifactId>simter-auth-rest-webflux</artifactId>
+  <packaging>jar</packaging>
+  <description>Rest API By WebFlux</description>
+  <developers>
+    <developer>
+      <name>RJ.Hwang</name>
+      <email>rongjihuang@gmail.com</email>
+    </developer>
+  </developers>
+  <dependencies>
+    <dependency>
+      <groupId>tech.simter.auth</groupId>
+      <artifactId>simter-auth-data</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webflux</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+    </dependency>
+
+    <!-- test -->
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-kotlin</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>tech.simter.reactive</groupId>
+      <artifactId>simter-reactive-web</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- json api by jackson-->
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.json</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr353</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-json</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <!-- use simter-jackson-ext instead -->
+        <exclusion>
+          <groupId>com.fasterxml.jackson.datatype</groupId>
+          <artifactId>jackson-datatype-jsr310</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>tech.simter</groupId>
+      <artifactId>simter-jackson-ext</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
