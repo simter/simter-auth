@@ -24,6 +24,7 @@ data class Team(
   override val code: String,
   override val name: String,
   override val branch: Branch? = null,
+  override val company: Company? = null,
   override val createOn: OffsetDateTime = OffsetDateTime.now().truncatedTo(ChronoUnit.SECONDS)
 ) : Organization {
   override val type: Actor.Type

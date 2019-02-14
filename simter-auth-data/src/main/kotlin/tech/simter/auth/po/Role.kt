@@ -23,15 +23,18 @@ data class Role(
   override val code: String,
   override val name: String,
   /**
-   * The belong to [Company].
+   * The directly belong to [Company].
    *
    * Null means this role is a common role for each [Company].
    */
-  override val branch: Company? = null,
+  override val company: Company? = null,
   override val createOn: OffsetDateTime = OffsetDateTime.now().truncatedTo(ChronoUnit.SECONDS)
 ) : Actor {
   override val type: Actor.Type
     get() = Actor.Type.Role
+  /** Equals to [company], it's useless */
+  override val branch: Company?
+    get() = this.company
 
   /**
    * The Role Status.

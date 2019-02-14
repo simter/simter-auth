@@ -24,9 +24,10 @@ data class User(
    * The master directly [Branch].
    *
    * A User can directly belong to multiple branches, but only the master [Branch] record here.
-   * Other belong to branches should be record to [Relation] with [Relation.Type.UserBranch].
+   * Other belong to branches should be record to [Relation] with [Relation.Type.BranchUser].
    */
   override val branch: Branch? = null,
+  override val company: Company? = null,
   override val createOn: OffsetDateTime = OffsetDateTime.now().truncatedTo(ChronoUnit.SECONDS)
 ) : Actor {
   override val type: Actor.Type

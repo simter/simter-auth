@@ -23,6 +23,7 @@ data class Department(
   override val code: String,
   override val name: String,
   override val branch: Branch,
+  override val company: Company? = null,
   override val createOn: OffsetDateTime = OffsetDateTime.now().truncatedTo(ChronoUnit.SECONDS)
 ) : Branch {
   override val type: Actor.Type

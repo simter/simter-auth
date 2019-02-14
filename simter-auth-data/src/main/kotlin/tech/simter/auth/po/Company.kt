@@ -22,9 +22,13 @@ data class Company(
   override val status: Organization.Status,
   override val code: String,
   override val name: String,
-  override val branch: Company? = null,
+  /** The directly belong to [Company] */
+  override val company: Company? = null,
   override val createOn: OffsetDateTime = OffsetDateTime.now().truncatedTo(ChronoUnit.SECONDS)
 ) : Branch {
   override val type: Actor.Type
     get() = Actor.Type.Company
+  /** Equals to [company], it's useless */
+  override val branch: Company?
+    get() = this.company
 }

@@ -1,11 +1,15 @@
 package tech.simter.auth.po.base
 
+import tech.simter.auth.po.Company
+import tech.simter.auth.po.Department
 import tech.simter.auth.po.Role
 import tech.simter.auth.po.User
 import java.time.OffsetDateTime
 
 /**
  * The identity abstraction for [Organization], [User] and [Role].
+ *
+ * The [company] and [code] should be global unique.
  *
  * @author RJ
  */
@@ -19,8 +23,17 @@ interface Actor {
   val code: String
   /** The actor name */
   val name: String
-  /** The belong to Branch */
+  /**
+   * The directly belong to Branch.
+   *
+   * It can be [Company] or [Department].
+   * And it must be equals to [company] or be the descendant of [company].
+   */
   val branch: Branch?
+  /**
+   * The first ancestor Company on the belong branch tree.
+   */
+  val company: Company?
   val createOn: OffsetDateTime
 
   /**
