@@ -13,3 +13,8 @@ bin
 .idea
 *.iml
 .vscode
+# Office temp files
+~$*.doc*
+~$*.xls*
+~$*.ppt*
+~$*.~vsd*
