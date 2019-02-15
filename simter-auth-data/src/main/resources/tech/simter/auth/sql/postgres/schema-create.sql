@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Create table script.
  * @author RJ
  */
