@@ -18,6 +18,11 @@
   </developers>
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>tech.simter</groupId>
+        <artifactId>simter-r2dbc-ext</artifactId>
+        <version>1.2.0</version>
+      </dependency>
       <!-- simter-auth -->
       <dependency>
         <groupId>tech.simter.auth</groupId>
