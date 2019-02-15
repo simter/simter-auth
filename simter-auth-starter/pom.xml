@@ -136,7 +136,7 @@
     <profile>
       <id>reactive-mongo-embedded</id>
       <activation>
-        <activeByDefault>true</activeByDefault>
+        <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
         <app.dao>reactive-mongo-embedded</app.dao>
@@ -156,6 +156,9 @@
     </profile>
     <profile>
       <id>reactive-mongo</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
       <properties>
         <app.dao>reactive-mongo</app.dao>
         <db.platform>mongo</db.platform>
@@ -170,6 +173,9 @@
     </profile>
     <profile>
       <id>reactive-h2</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <properties>
         <app.dao>reactive-h2</app.dao>
         <db.platform>h2</db.platform>
@@ -195,6 +201,9 @@
     </profile>
     <profile>
       <id>reactive-postgres</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
       <properties>
         <app.dao>reactive-postgres</app.dao>
         <db.platform>postgres</db.platform>

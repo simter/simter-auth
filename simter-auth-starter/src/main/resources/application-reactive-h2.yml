@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    platform: @db.platform@
+    url: @db.url@
+    username: @db.username@
+    password: @db.password@
+    continue-on-error: false
+    sql-script-encoding: UTF-8
+    initialization-mode: @db.init-mode@ # embedded|always|never
+    schema: # available when initialization-mode=always
+      # drop
+      - classpath:tech/simter/auth/sql/@db.platform@/schema-drop.sql
+      # create
+      - classpath:tech/simter/auth/sql/@db.platform@/schema-create.sql
+    data: # available when initialization-mode=always
+      - classpath:tech/simter/auth/sql/@db.platform@/data.sql

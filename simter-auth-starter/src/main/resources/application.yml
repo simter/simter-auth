@@ -1,0 +1,21 @@
+module:
+  version:
+    simter-auth: @project.version@
+  rest-context-path:
+    simter-auth: /auth
+server:
+  port: ${port:8083}
+  servlet:
+    context-path: /
+  server-header: @project.artifactId@-@project.version@
+spring:
+  main:
+    banner-mode: 'off'
+  profiles:
+    active:
+      - @app.env@
+      - @app.dao@
+  application:
+    name: @project.artifactId@-@project.version@
+  jackson:
+    default-property-inclusion: NON_EMPTY # see enum of com.fasterxml.jackson.annotation.JsonInclude.Include
